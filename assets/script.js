@@ -35,4 +35,32 @@ var confirmUpperCase;
 var confirmLowerCase;
 
 
+// Prompt to confirm how many characters the user would like in their password
+function generatePassword() {
+    var confirmLength = (prompt("How many characters would you like in your password?"));
+
+    // Loop if the answer will be outside of the parameters
+    while(confirmLength <= 7 || confirmLength >= 51) {
+        alert("Password length must be between 8-50 characters Try again");
+        var confirmLength = (prompt("How many characters would you like in your password?"));
+    }
+
+    // Repeat back how many characters the user will have
+    alert('Your password will have ${confirmLength} characters');
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
 
