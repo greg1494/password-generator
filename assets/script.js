@@ -63,20 +63,33 @@ function generatePassword() {
             var confirmUpperCase = confirm("Click OK to confirm if you would like to include uppercase characters");
         }
 
-        //
+        // Assign an action to the password parameters NEED TO FIX THIS
+        var passwordCharacters = []
 
+        if(confirmSpecialCharacter) {
+            passwordCharacters = passwordCharacters.concat(specialChar)
+        }
+        if(confirmNumericCharacter) {
+            passwordCharacters = passwordCharacters.concat(number) 
+        }
+        if(confirmLowerCase) {
+            passwordCharacters = passwordCharacters.concat(alphaLower)
+        }
+        if(confirmUpperCase) {
+            passwordCharacters = passwordCharacters.concat(alphaUpper)
+        }
 
+        console.log(passwordCharacters)
 
+        // Empty string to be filled based on for loop selecting random characters from the array
+        var randomPassword = ""
 
+        for(var i = 0; i < confirmLength; i++) {
+            randomPassword = randomPassword + passwordCharacters[Math.floor(Math.random() * passwordCharacters.length)];
+            console.log(randomPassword)
+        }
 
-
-
-
-
-
-
-
-
+        return randomPassword;
 
 }
 
